@@ -48,6 +48,7 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
 Run fraud detection queries.
 
 View suspicious results in flaggedtransactions.
