@@ -73,26 +73,22 @@ Flagged transactions are stored in a separate table for further investigation.
    ```sql
    CREATE DATABASE fraud_detection;
    USE fraud_detection;
-2.Create the bank_transactions table (schema included in repo).
+2. Create the bank_transactions table (schema included in repo).
 
-3.Place your dataset in MySQL’s Uploads folder:
+3. Place your dataset in MySQL’s Uploads folder:
+   ```sql
+   C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\
 
-arduino
-C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\
-
-4.Import data using:
+4. Import data using:
 To load the dataset into MySQL, run:
+   ```sql
+   LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/bank_transactions_data.csv'
+   INTO TABLE bank_transactions
+   FIELDS TERMINATED BY ','
+   ENCLOSED BY '"'
+   LINES TERMINATED BY '\n'
+   IGNORE 1 ROWS;
 
-arduino
-sql
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/bank_transactions_data.csv'
-INTO TABLE bank_transactions
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
+5. Run fraud detection queries.
 
-
-5.Run fraud detection queries.
-
-6.View suspicious results in flaggedtransactions.
+6. View suspicious results in flaggedtransactions.
